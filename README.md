@@ -1,4 +1,4 @@
-# konfig_uebung_1_MS_DW
+# 20-Abgabe01-Schubert-Wagner
 Repository zu Verwaltung der Uebung 1, der Lehrveranstaltung Konfigurationsmanagement.
 
 ## Übersicht über Projekt

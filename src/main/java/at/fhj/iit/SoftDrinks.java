@@ -78,7 +78,9 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
      */
     public Map nutritionValueTotal(int volume) {
         Map<String, Double> nutritionsToVolume = new HashMap<>();
+        // Iterate nutrionalValue based on Keys
         for (String key: nutritionalValue.keySet()) {
+            // Add nutritionValue/volume to returned map
             nutritionsToVolume.put(key, nutritionalValue.get(key).doubleValue()*(((double)volume)/100));
         }
         return nutritionsToVolume;

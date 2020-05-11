@@ -73,15 +73,19 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Returns a map with nutrition values based on the volume of the drink.
-     * @param volume
      * @return nutritionValueTotal
      */
-    public Map nutritionValueTotal(int volume) {
+    public Map nutritionValueTotal() throws EmptyDrinkException {
+        // If drink is empty throw an exception
+        if(this.getVolume() == 0){
+            throw new EmptyDrinkException();
+        }
+
         Map<String, Double> nutritionsToVolume = new HashMap<>();
         // Iterate nutrionalValue based on Keys
         for (String key: nutritionalValue.keySet()) {
             // Add nutritionValue/volume to returned map
-            nutritionsToVolume.put(key, nutritionalValue.get(key).doubleValue()*(((double)volume)/100));
+            nutritionsToVolume.put(key, nutritionalValue.get(key).doubleValue()*(((double)this.getVolume())/100));
         }
         return nutritionsToVolume;
     }

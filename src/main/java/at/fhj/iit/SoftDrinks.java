@@ -1,23 +1,26 @@
 package at.fhj.iit;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class SoftDrinks extends at.fhj.iit.SimpleDrink {
     private String color;
-    private Set container;
+    private Set<String> container = new HashSet();
     private Map<String, Double> nutritionalValue;
 
 
     /**
      * A constructor for the class SoftDrinks.
+     * @param liquid
+     * @param name
      * @param color
      * @param container
      * @param nutritionalValue
      */
-    public SoftDrinks(Liquid l, String name, String color, Set container, Map nutritionalValue) {
-        super(name, l);
+    public SoftDrinks(Liquid liquid, String name, String color, Set<String> container, Map nutritionalValue) {
+        super(name, liquid);
         this.color = color;
         this.container = container;
         this.nutritionalValue = nutritionalValue;
@@ -85,7 +88,8 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
         // Iterate nutrionalValue based on Keys
         for (String key: nutritionalValue.keySet()) {
             // Add nutritionValue/volume to returned map
-            nutritionsToVolume.put(key, nutritionalValue.get(key).doubleValue()*(((double)this.getVolume())/100));
+            nutritionsToVolume.put(key,
+                    nutritionalValue.get(key).doubleValue()*(((double)this.getVolume())/0.1));
         }
         return nutritionsToVolume;
     }

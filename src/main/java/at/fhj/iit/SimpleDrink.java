@@ -15,7 +15,7 @@ public class SimpleDrink extends Drink{
      * @param name name of drink
      * @param l only liquid in drink
      */
-    SimpleDrink(String name, Liquid l){
+    public SimpleDrink(String name, Liquid l){
         super(name);
         this.l = l;
     }

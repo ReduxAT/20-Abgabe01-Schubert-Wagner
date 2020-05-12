@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-@DisplayName("Testing Liquid implementation")
+@DisplayName("Testing SoftDrink implementation")
 public class SoftDrinksTest {
     private SoftDrinks sdN, sdZV, sdZN, sdEC;
     private Set<String> container;

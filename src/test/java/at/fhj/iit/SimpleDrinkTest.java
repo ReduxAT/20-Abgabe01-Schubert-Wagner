@@ -26,14 +26,19 @@ public class SimpleDrinkTest {
     public void testConstructorNonAlcoholic(){
         assertEquals(lN.getVolume(), 0.7, 0.001);
         assertEquals(lN.getAlcoholPercent(), 0, 0.001);
-        assertEquals(lN.isAlcoholic(), false);
     }
     @Test
     @DisplayName("Testing constructor alcoholic (beer based)")
     public void testConstructorAlcoholic(){
         assertEquals(lA.getVolume(), 0.5, 0.001);
         assertEquals(lA.getAlcoholPercent(), 5, 0.001);
+    }
+
+    @Test
+    @DisplayName("Testing the method isAlcoholic()")
+    public void testIsAlcoholic(){
         assertEquals(lA.isAlcoholic(), true);
+        assertEquals(lN.isAlcoholic(), false);
     }
 
 

@@ -21,12 +21,21 @@ public class SimpleDrinkTest {
         lA = new SimpleDrink("Puntigamer", new Liquid("Bier", 0.5, 5));
     }
 
+    /**
+     * @author Michael Schubert
+     * Method tests the constructor with an non alcoholic simple drink.
+     */
     @Test
     @DisplayName("Testing constructor non alcoholic (water based)")
     public void testConstructorNonAlcoholic(){
         assertEquals(lN.getVolume(), 0.7, 0.001);
         assertEquals(lN.getAlcoholPercent(), 0, 0.001);
     }
+
+    /**
+     * @author Michael Schubert
+     * Method tests the constructor with an alcoholic simple drink.
+     */
     @Test
     @DisplayName("Testing constructor alcoholic (beer based)")
     public void testConstructorAlcoholic(){
@@ -34,6 +43,10 @@ public class SimpleDrinkTest {
         assertEquals(lA.getAlcoholPercent(), 5, 0.001);
     }
 
+    /**
+     * @author Michael Schubert
+     * Method tests the checkup, if the simple drink is alcoholic.
+     */
     @Test
     @DisplayName("Testing the method isAlcoholic()")
     public void testIsAlcoholic(){

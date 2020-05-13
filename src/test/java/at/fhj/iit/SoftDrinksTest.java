@@ -1,7 +1,5 @@
 package at.fhj.iit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,6 +10,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testing SoftDrink implementation")
 public class SoftDrinksTest {
@@ -143,7 +143,7 @@ public class SoftDrinksTest {
 
     @Test
     @DisplayName("Testing nutritionValueTotal")
-    public void testNutritionValueTotal(){
+    public void testNutritionValueTotal() throws EmptyDrinkException {
         Map<String, Double> expectedValues = new HashMap<>();
         expectedValues.put("Fett", 0.);
         expectedValues.put("Eiweiß", 0.);
@@ -155,7 +155,10 @@ public class SoftDrinksTest {
     @Test
     @DisplayName("Testing nutritionValueTotal with no volume")
     public void testNutritionValueTotalNoVolume(){
-        Map<String, Double> expectedValues = new HashMap<>();
-        assertEquals(sdZV.nutritionValueTotal(), expectedValues);
+        Exception e = assertThrows(EmptyDrinkException.class, () -> {sdZV.nutritionValueTotal();});
+        String actualMessage = e.getMessage();
+        String expectedMessage = "It seems like your Drink is empty.";
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 }

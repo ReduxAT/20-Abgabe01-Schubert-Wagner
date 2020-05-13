@@ -13,6 +13,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * A constructor for the class SoftDrinks.
+     *
      * @param liquid
      * @param name
      * @param color
@@ -28,6 +29,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Getter for the attribute color.
+     *
      * @return
      */
     public String getColor() {
@@ -36,6 +38,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Setter for the attribute color.
+     *
      * @param color
      */
     public void setColor(String color) {
@@ -44,6 +47,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Getter for the attribute container.
+     *
      * @return
      */
     public Set getContainer() {
@@ -52,6 +56,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Setter for the attribute container.
+     *
      * @param container
      */
     public void setContainer(Set container) {
@@ -60,6 +65,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Getter for the attribute nutritionalValue.
+     *
      * @return
      */
     public Map getNutritionalValue() {
@@ -68,6 +74,7 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Setter for the attribute nutritionalValue.
+     *
      * @param nutritionalValue
      */
     public void setNutritionalValue(Map nutritionalValue) {
@@ -76,24 +83,21 @@ public class SoftDrinks extends at.fhj.iit.SimpleDrink {
 
     /**
      * Returns a map with nutrition values based on the volume of the drink.
+     *
      * @return nutritionValueTotal
      */
-    public Map nutritionValueTotal()  {
+    public Map nutritionValueTotal() throws EmptyDrinkException {
         Map<String, Double> nutritionsToVolume = new HashMap<>();
-        try{
-            // If drink is empty throw an exception
-            if(this.getVolume() == 0){
-                throw new EmptyDrinkException();
-            }
+        // If drink is empty throw an exception
+        if (this.getVolume() == 0) {
+            throw new EmptyDrinkException();
+        }
 
-            // Iterate nutrionalValue based on Keys
-            for (String key: nutritionalValue.keySet()) {
-                // Add nutritionValue/volume to returned map
-                nutritionsToVolume.put(key,
-                        nutritionalValue.get(key).doubleValue()*(((double)this.getVolume())/0.1));
-            }
-        }catch(EmptyDrinkException e){
-            System.out.println(e.getMessage());
+        // Iterate nutrionalValue based on Keys
+        for (String key : nutritionalValue.keySet()) {
+            // Add nutritionValue/volume to returned map
+            nutritionsToVolume.put(key,
+                    nutritionalValue.get(key).doubleValue() * (((double) this.getVolume()) / 0.1));
         }
         return nutritionsToVolume;
     }

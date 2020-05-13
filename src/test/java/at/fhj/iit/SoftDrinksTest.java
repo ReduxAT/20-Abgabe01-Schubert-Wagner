@@ -56,6 +56,10 @@ public class SoftDrinksTest {
         sdEC = new SoftDrinks(lN, "Test2", "", emptyContainer, nutritionalValue);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the constructor in normal Case with valid input
+     */
     @Test
     @DisplayName("Testing constructor Normal")
     public void testConstructorNormal(){
@@ -64,6 +68,10 @@ public class SoftDrinksTest {
         assertEquals(sdN.getNutritionalValue(), nutritionalValue);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the constructor when Liquid Volume is 0
+     */
     @Test
     @DisplayName("Testing constructor no Volume")
     public void testConstructorNoVolume(){
@@ -72,6 +80,10 @@ public class SoftDrinksTest {
         assertEquals(sdZV.getNutritionalValue(), nutritionalValue);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the constructor when the nutrition Map is empty
+     */
     @Test
     @DisplayName("Testing constructor empty nutritional Values")
     public void testConstructorEmptyNutritionalValue(){
@@ -80,6 +92,10 @@ public class SoftDrinksTest {
         assertEquals(sdZN.getNutritionalValue(), emptyNutritionalValue);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the contructor with an empty Container Set
+     */
     @Test
     @DisplayName("Testing constructor empty Container")
     public void testConstructorEmptyContainer(){
@@ -88,6 +104,10 @@ public class SoftDrinksTest {
         assertEquals(sdEC.getNutritionalValue(), nutritionalValue);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the inheritance, with normal input
+     */
     @Test
     @DisplayName("Testing inheritance Normal")
     public void testInheritanceNormal(){
@@ -95,6 +115,10 @@ public class SoftDrinksTest {
         assertEquals(sdN.getVolume(), 0.125, 0.001);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the inheritance, with Liquid Volume 0
+     */
     @Test
     @DisplayName("Testing inheritance no Volume")
     public void testInheritanceNoVolume(){
@@ -102,6 +126,10 @@ public class SoftDrinksTest {
         assertEquals(sdZV.getVolume(), 0, 0.001);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the inheritance, with an empty nutritionValue Map
+     */
     @Test
     @DisplayName("Testing inheritance empty nutritionValue")
     public void testInheritanceEmptyNutritionalValue(){
@@ -109,6 +137,10 @@ public class SoftDrinksTest {
         assertEquals(sdZN.getVolume(), 0.125, 0.001);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the inheritance, with an empty container set
+     */
     @Test
     @DisplayName("Testing inheritance empty Container")
     public void testInheritanceEmptyContainer(){
@@ -116,6 +148,10 @@ public class SoftDrinksTest {
         assertEquals(sdEC.getVolume(), 0.125, 0.001);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the Color-Setter
+     */
     @Test
     @DisplayName("Testing setter Color")
     public void testSetterColor(){
@@ -123,6 +159,10 @@ public class SoftDrinksTest {
         assertEquals(sdN.getColor(), "Blau");
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the Container Setter
+     */
     @Test
     @DisplayName("Testing setter Container")
     public void testSetterContainer(){
@@ -132,6 +172,10 @@ public class SoftDrinksTest {
         assertEquals(sdN.getContainer(), test);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the nutritionValue Setter
+     */
     @Test
     @DisplayName("Testing setter nutritionalValue")
     public void testSetterNutritionalValue(){
@@ -141,6 +185,10 @@ public class SoftDrinksTest {
         assertEquals(sdN.getNutritionalValue(), testNutritionalValue);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the nutritionValue Calculation
+     */
     @Test
     @DisplayName("Testing nutritionValueTotal")
     public void testNutritionValueTotal() throws EmptyDrinkException {
@@ -152,6 +200,11 @@ public class SoftDrinksTest {
         assertEquals(sdN.nutritionValueTotal(), expectedValues);
     }
 
+    /**
+     * @author Dario Wagner
+     * Method tests the nutritionValue Calculation with no volume
+     * EmptyDrinkException is expected
+     */
     @Test
     @DisplayName("Testing nutritionValueTotal with no volume")
     public void testNutritionValueTotalNoVolume(){

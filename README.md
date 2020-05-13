@@ -8,9 +8,11 @@ Grundsätzlich soll mit diesem Projekt der Umgang mit GitHub, JavaDocs und Testi
 
 ## SoftDrinks als Unterklasse von SimpleDrinks
 ### Variable
- - [ ] Variable (Set?) BehälterTyp (Plastik Flasche, Glas Flasche, Dose)
- - [ ] Collection (Map?) Nährwerte
- - [ ] String Farbe
+ - [x] Variable (Set?) BehälterTyp (Plastik Flasche, Glas Flasche, Dose)
+ - [x] Collection (Map?) Nährwerte
+ - [x] String Farbe
 
 ### Methoden - Ideen
- - [ ] Map hat Nährwerte pro 100g und Methode berechnet Nährwerte auf das Volumen bezogen
+ - [x] Map hat Nährwerte pro 100g und Methode berechnet Nährwerte auf das Volumen bezogen
+### Custom Exception
+ - [x] Es soll die Exception "EmptyDrink" auftreten wenn die Nährwerte berechnet werden und das Volumen 0 ist.
